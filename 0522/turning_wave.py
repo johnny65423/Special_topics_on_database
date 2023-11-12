@@ -19,7 +19,7 @@ def connect_SQL_server():
 def get_data(company, start, end, cursor):
 
     command = f"""SELECT [date],[o],[h],[l],[c],[v],[MA5],[MA10]
-            FROM [dbo].[stock_data_2021_2022] 
+            FROM [dbo].[price_history] 
             where [stock_code] = {company} AND date > '{start}' AND date < '{end}'"""
     cursor.execute(command)
 
